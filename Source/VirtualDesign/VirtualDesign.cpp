@@ -3,4 +3,4 @@
 #include "VirtualDesign.h"
 #include "Modules/ModuleManager.h"
 
-IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, VirtualDesign, "VirtualDesign" );
+IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, VirtualDesign, "VirtualDesign" );		
