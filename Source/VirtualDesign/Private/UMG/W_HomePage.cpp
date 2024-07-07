@@ -3,8 +3,7 @@
 
 #include "UMG/W_HomePage.h"
 #include "Components/Button.h"
-#include "GM/VDHUD.h"
-#include "Kismet/GameplayStatics.h"
+
 
 bool UW_HomePage::Initialize()
 {
@@ -14,6 +13,8 @@ bool UW_HomePage::Initialize()
 void UW_HomePage::NativeConstruct()
 {
 	Super::NativeConstruct();
+
+	StartButton->OnClicked.AddDynamic(this, &UW_HomePage::OnStartButtonClicked);
 }
 
 void UW_HomePage::InitWidget()
@@ -21,4 +22,8 @@ void UW_HomePage::InitWidget()
 	StartButton->SetVisibility(ESlateVisibility::Collapsed);
 }
 
+void UW_HomePage::OnStartButtonClicked()
+{
+	this->SetVisibility(ESlateVisibility::Collapsed);
+}
 

@@ -4,13 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Data/DataType.h"
 #include "VDGMBase.generated.h"
 
-UENUM()
-enum class EUIVDWidget : uint8
-{
-	UI_HomePage,
-};
+
 
 /**
  * 

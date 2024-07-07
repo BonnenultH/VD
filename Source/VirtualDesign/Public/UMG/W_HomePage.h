@@ -4,8 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "GM/VDGMBase.h"
+#include "Data/DataType.h"
 #include "W_HomePage.generated.h"
+
+class UButton;
 
 /**
  * 
@@ -15,17 +17,24 @@ class VIRTUALDESIGN_API UW_HomePage : public UUserWidget
 {
 	GENERATED_BODY()
 protected:
-
+	UFUNCTION()
+	void OnStartButtonClicked();
+	
 public:
 	virtual bool Initialize() override;
 
 	virtual void NativeConstruct() override;
 
 	void InitWidget();
+
+	UButton* GetStartButton()
+	{
+		return StartButton;
+	}
 	
 protected:
 	UPROPERTY(meta=(BindWidget))
-	class UButton* StartButton;
+	UButton* StartButton;
 	
 	EUIVDWidget MyWidgetType = EUIVDWidget::UI_HomePage;
 };

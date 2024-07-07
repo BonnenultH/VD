@@ -3,9 +3,11 @@
 
 #include "GM/VDHUD.h"
 #include "Blueprint/UserWidget.h"
+#include "Components/Button.h"
 #include "GM/VDController.h"
 #include "Kismet/GameplayStatics.h"
 #include "UMG/W_HomePage.h"
+#include "GM/VDGMBase.h"
 
 
 void AVDHUD::BeginPlay()
@@ -21,6 +23,8 @@ void AVDHUD::BeginPlay()
 		WidgetMap.Add(EUIVDWidget::UI_HomePage, Widget);
 		
 		AddVDWidgetToViewPort(Widget);
+
+		StartGame();
 	}
 }
 
@@ -39,6 +43,18 @@ void AVDHUD::AddVDWidgetToViewPort(UUserWidget* TargetWidget)
 		return;
 
 	TargetWidget->AddToViewport(0);
+}
+
+void AVDHUD::StartGame()
+{
+	UW_HomePage* HomeWidget = Cast<UW_HomePage>(WidgetMap[EUIVDWidget::UI_HomePage]);
+	if(HomeWidget)
+	{
+		if(HomeWidget->GetStartButton())
+		{
+			HomeWidget->GetStartButton()->SetVisibility(ESlateVisibility::Visible);
+		}
+	}
 }
 
 

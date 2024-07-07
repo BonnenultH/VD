@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
-#include "GM/VDGMBase.h"
 #include "VDHUD.generated.h"
 
 DECLARE_MULTICAST_DELEGATE_OneParam(FDelegateOpenWidget, EUIVDWidget);
@@ -28,11 +27,13 @@ public:
 	
 	UFUNCTION()
 	void AddVDWidgetToViewPort(UUserWidget* TargetWidget);
-	
+
+	UFUNCTION()
+	void StartGame();
 
 protected:
 	UPROPERTY()
-	AVDGMBase* VDGameMode;
+	class AVDGMBase* VDGameMode;
 	
 	UPROPERTY()
 	class AVDController* VDController;

@@ -282,6 +282,7 @@
     <ClCompile Include="..\..\Source\VirtualDesign\Private\UMG\W_HomePage.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClInclude Include="..\..\Source\VirtualDesign\Public\Data\DataType.h"/>
     <ClInclude Include="..\..\Source\VirtualDesign\Public\GM\VDController.h"/>
     <ClInclude Include="..\..\Source\VirtualDesign\Public\GM\VDGMBase.h"/>
     <ClInclude Include="..\..\Source\VirtualDesign\Public\GM\VDHUD.h"/>
