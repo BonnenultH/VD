@@ -15,14 +15,14 @@ class VIRTUALDESIGN_API UW_HomePage : public UUserWidget
 {
 	GENERATED_BODY()
 protected:
-	void InitWidget();
 
 public:
 	virtual bool Initialize() override;
 
-	UFUNCTION()
-	void OpenWidget(EUIVDWidget WidgetType);
+	virtual void NativeConstruct() override;
 
+	void InitWidget();
+	
 protected:
 	UPROPERTY(meta=(BindWidget))
 	class UButton* StartButton;

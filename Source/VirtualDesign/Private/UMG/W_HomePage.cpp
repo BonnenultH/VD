@@ -8,15 +8,12 @@
 
 bool UW_HomePage::Initialize()
 {
-	bool Result = Super::Initialize();
-	
-	AVDHUD* VDHud = Cast<AVDHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
-	if(VDHud)
-	{
-		VDHud->OpenWidget.AddUObject(this, &UW_HomePage::OpenWidget);
-	}
-	
-	return Result;
+	return Super::Initialize();
+}
+
+void UW_HomePage::NativeConstruct()
+{
+	Super::NativeConstruct();
 }
 
 void UW_HomePage::InitWidget()
@@ -24,10 +21,4 @@ void UW_HomePage::InitWidget()
 	StartButton->SetVisibility(ESlateVisibility::Collapsed);
 }
 
-void UW_HomePage::OpenWidget(EUIVDWidget WidgetType)
-{
-	if(MyWidgetType == WidgetType)
-	{
-		InitWidget();
-	}
-}
+

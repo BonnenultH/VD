@@ -5,6 +5,7 @@
 #include "Blueprint/UserWidget.h"
 #include "GM/VDController.h"
 #include "Kismet/GameplayStatics.h"
+#include "UMG/W_HomePage.h"
 
 
 void AVDHUD::BeginPlay()
@@ -27,12 +28,8 @@ void AVDHUD::BeginPlay()
 UUserWidget* AVDHUD::CreateVDWidget(EUIVDWidget WidgetType, TSubclassOf<UUserWidget> UserWidgetClass)
 {
 	UUserWidget* Widget = CreateWidget<UUserWidget>(GetWorld(), UserWidgetClass);
-	
-	if(OpenWidget.IsBound())
-	{
-		OpenWidget.Broadcast(WidgetType);
-	}
-	
+	UW_HomePage* HomeWidget = Cast<UW_HomePage>(Widget);
+	HomeWidget->InitWidget();
 	return Widget;
 }
 

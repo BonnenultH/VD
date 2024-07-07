@@ -15,7 +15,7 @@ class VIRTUALDESIGN_API AVDController : public APlayerController
 	GENERATED_BODY()
 
 	AVDController();
-public:
+
 	
 	
 };
