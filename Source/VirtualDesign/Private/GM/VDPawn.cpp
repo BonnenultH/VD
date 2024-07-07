@@ -2,6 +2,7 @@
 
 
 #include "GM/VDPawn.h"
+#include "Components/WidgetComponent.h"
 
 // Sets default values
 AVDPawn::AVDPawn()
@@ -16,6 +17,7 @@ void AVDPawn::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	UIComponent = GetComponentByClass<UWidgetComponent>();
 }
 
 // Called every frame

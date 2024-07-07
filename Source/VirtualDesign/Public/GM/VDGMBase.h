@@ -8,7 +8,6 @@
 #include "VDGMBase.generated.h"
 
 
-
 /**
  * 
  */

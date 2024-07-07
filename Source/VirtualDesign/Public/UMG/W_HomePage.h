@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "W_BaseWidget.h"
 #include "Data/DataType.h"
 #include "W_HomePage.generated.h"
 
@@ -13,7 +13,7 @@ class UButton;
  * 
  */
 UCLASS()
-class VIRTUALDESIGN_API UW_HomePage : public UUserWidget
+class VIRTUALDESIGN_API UW_HomePage : public UW_BaseWidget
 {
 	GENERATED_BODY()
 protected:
@@ -21,11 +21,8 @@ protected:
 	void OnStartButtonClicked();
 	
 public:
-	virtual bool Initialize() override;
 
-	virtual void NativeConstruct() override;
-
-	void InitWidget();
+	virtual void InitWidget() override;
 
 	UButton* GetStartButton()
 	{

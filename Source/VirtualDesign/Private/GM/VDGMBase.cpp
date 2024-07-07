@@ -21,6 +21,10 @@ void AVDGMBase::InitUIMap()
 {
 	UIMap.Add(EUIVDWidget::UI_HomePage,
 		LoadWidgetResources(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/UMG/UI_WHomePage.UI_WHomePage_C'")));
+	
+	UIMap.Add(EUIVDWidget::UI_UserWidget,
+		LoadWidgetResources(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/UMG/UI_WUserWidget.UI_WUserWidget_C'")));
+	
 }
 
 

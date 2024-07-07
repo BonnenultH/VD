@@ -3,15 +3,18 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "W_BaseWidget.h"
 #include "W_UserWidget.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class VIRTUALDESIGN_API UW_UserWidget : public UUserWidget
+class VIRTUALDESIGN_API UW_UserWidget : public UW_BaseWidget
 {
 	GENERATED_BODY()
+
+protected:
+	virtual void InitWidget() override;
 	
 };

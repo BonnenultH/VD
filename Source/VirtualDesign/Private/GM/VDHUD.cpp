@@ -8,6 +8,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "UMG/W_HomePage.h"
 #include "GM/VDGMBase.h"
+#include "UMG/W_BaseWidget.h"
 
 
 void AVDHUD::BeginPlay()
@@ -18,7 +19,7 @@ void AVDHUD::BeginPlay()
 
 	if(VDGameMode)
 	{
-		UUserWidget* Widget = CreateVDWidget(EUIVDWidget::UI_HomePage, VDGameMode->GetUIMap()[EUIVDWidget::UI_HomePage]);
+		UW_BaseWidget* Widget = CreateVDWidget(EUIVDWidget::UI_HomePage, VDGameMode->GetUIMap()[EUIVDWidget::UI_HomePage]);
 		
 		WidgetMap.Add(EUIVDWidget::UI_HomePage, Widget);
 		
@@ -29,15 +30,16 @@ void AVDHUD::BeginPlay()
 }
 
 
-UUserWidget* AVDHUD::CreateVDWidget(EUIVDWidget WidgetType, TSubclassOf<UUserWidget> UserWidgetClass)
+UW_BaseWidget* AVDHUD::CreateVDWidget(EUIVDWidget WidgetType, TSubclassOf<UUserWidget> UserWidgetClass)
 {
 	UUserWidget* Widget = CreateWidget<UUserWidget>(GetWorld(), UserWidgetClass);
-	UW_HomePage* HomeWidget = Cast<UW_HomePage>(Widget);
-	HomeWidget->InitWidget();
-	return Widget;
+	UW_BaseWidget* UIWidget = Cast<UW_BaseWidget>(Widget);
+	UIWidget->InitWidget();
+	
+	return UIWidget;
 }
 
-void AVDHUD::AddVDWidgetToViewPort(UUserWidget* TargetWidget)
+void AVDHUD::AddVDWidgetToViewPort(UW_BaseWidget* TargetWidget)
 {
 	if(!TargetWidget)
 		return;

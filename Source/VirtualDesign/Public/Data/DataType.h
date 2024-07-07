@@ -9,4 +9,6 @@ UENUM()
 enum class EUIVDWidget : uint8
 {
 	UI_HomePage,
+	UI_UserWidget,
+	UI_UserWSecond
 };
